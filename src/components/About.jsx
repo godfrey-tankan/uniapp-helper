@@ -7,21 +7,21 @@ const About = () => {
   const [activeTab, setActiveTab] = useState('mission');
 
   return (
-    <section id="about" className="py-20 bg-blue-50">
-      <div className="container px-4 mx-auto">
+    <section id="about" className="py-16 md:py-20 bg-blue-50">
+      <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <ScrollReveal>
             <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">About UniApply</h2>
           </ScrollReveal>
           <ScrollReveal delay={200}>
-            <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
               Transforming the university application experience through innovation and accessibility
             </p>
           </ScrollReveal>
 
           <div className="mt-10">
             <ScrollReveal delay={300}>
-              <div className="grid w-full grid-cols-4 bg-white rounded-lg p-1 mb-6">
+              <div className="grid w-full grid-cols-2 md:grid-cols-4 bg-white rounded-lg p-1 mb-6 shadow-sm">
                 <button 
                   onClick={() => setActiveTab('mission')}
                   className={`py-3 text-sm font-medium rounded-md transition-colors ${
@@ -58,9 +58,9 @@ const About = () => {
             </ScrollReveal>
 
             {activeTab === 'mission' && (
-              <ScrollReveal delay={400} className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="flex items-start mb-6">
-                  <div className="p-3 rounded-full bg-blue-50 mr-4">
+              <ScrollReveal delay={400} className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+                  <div className="p-3 rounded-full bg-blue-50 mr-4 flex-shrink-0">
                     <Target className="h-6 w-6 text-blue-700" />
                   </div>
                   <div>
@@ -74,15 +74,15 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-8 flex justify-end">
-                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50">Learn More</button>
+                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50 transition-colors">Learn More</button>
                 </div>
               </ScrollReveal>
             )}
 
             {activeTab === 'vision' && (
-              <ScrollReveal delay={400} className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="flex items-start mb-6">
-                  <div className="p-3 rounded-full bg-blue-50 mr-4">
+              <ScrollReveal delay={400} className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+                  <div className="p-3 rounded-full bg-blue-50 mr-4 flex-shrink-0">
                     <BookOpen className="h-6 w-6 text-blue-700" />
                   </div>
                   <div>
@@ -96,15 +96,15 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-8 flex justify-end">
-                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50">Learn More</button>
+                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50 transition-colors">Learn More</button>
                 </div>
               </ScrollReveal>
             )}
 
             {activeTab === 'values' && (
-              <ScrollReveal delay={400} className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="flex items-start mb-6">
-                  <div className="p-3 rounded-full bg-blue-50 mr-4">
+              <ScrollReveal delay={400} className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+                  <div className="p-3 rounded-full bg-blue-50 mr-4 flex-shrink-0">
                     <Award className="h-6 w-6 text-blue-700" />
                   </div>
                   <div>
@@ -130,15 +130,15 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-8 flex justify-end">
-                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50">Learn More</button>
+                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50 transition-colors">Learn More</button>
                 </div>
               </ScrollReveal>
             )}
 
             {activeTab === 'team' && (
-              <ScrollReveal delay={400} className="bg-white p-8 rounded-xl shadow-sm">
-                <div className="flex items-start mb-6">
-                  <div className="p-3 rounded-full bg-blue-50 mr-4">
+              <ScrollReveal delay={400} className="bg-white p-6 md:p-8 rounded-xl shadow-sm">
+                <div className="flex flex-col md:flex-row md:items-start gap-6 mb-6">
+                  <div className="p-3 rounded-full bg-blue-50 mr-4 flex-shrink-0">
                     <Users className="h-6 w-6 text-blue-700" />
                   </div>
                   <div>
@@ -158,7 +158,7 @@ const About = () => {
                   </div>
                 </div>
                 <div className="mt-8 flex justify-end">
-                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50">View All</button>
+                  <button className="px-6 py-2 border border-blue-200 rounded-full text-blue-700 hover:bg-blue-50 transition-colors">View All</button>
                 </div>
               </ScrollReveal>
             )}

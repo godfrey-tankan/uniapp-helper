@@ -14,7 +14,7 @@ const ProgramCard = ({
   index
 }) => (
   <ScrollReveal delay={delay} direction={index % 2 === 0 ? 'right' : 'left'}>
-    <div className="bg-white p-6 rounded-xl shadow-sm h-full relative">
+    <div className="bg-white p-6 rounded-xl shadow-sm h-full relative hover:shadow-md hover:-translate-y-1 transition-all duration-300">
       {popular && (
         <span className="absolute top-4 right-4 bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full font-medium">
           Popular
@@ -103,13 +103,13 @@ const Programs = () => {
   ];
 
   return (
-    <section id="programs" className="py-20 bg-blue-50">
-      <div className="container px-4 mx-auto">
+    <section id="programs" className="py-16 md:py-20 bg-blue-50">
+      <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-3xl font-bold text-center text-blue-900 mb-4">Featured Programs</h2>
         </ScrollReveal>
         <ScrollReveal delay={200}>
-          <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
             Explore our most popular academic programs across top universities
           </p>
         </ScrollReveal>
@@ -132,7 +132,7 @@ const Programs = () => {
 
         <ScrollReveal delay={600}>
           <div className="mt-12 text-center">
-            <button className="bg-blue-700 hover:bg-blue-800 text-white rounded-full px-8 py-3 flex items-center mx-auto">
+            <button className="bg-blue-700 hover:bg-blue-800 text-white rounded-full px-8 py-3 flex items-center mx-auto transition-colors">
               View All Programs <ChevronRight className="ml-2 h-5 w-5" />
             </button>
           </div>

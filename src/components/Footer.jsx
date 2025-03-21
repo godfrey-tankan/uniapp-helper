@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-blue-900 text-white">
-      <div className="container px-4 mx-auto py-16">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-6">
@@ -63,17 +63,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 mr-3 text-blue-300" />
+                <MapPin className="h-5 w-5 mr-3 text-blue-300 flex-shrink-0 mt-1" />
                 <span className="text-blue-100">123 Education Ave, Academic District, CA 90210</span>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 mr-3 text-blue-300" />
+                <Mail className="h-5 w-5 mr-3 text-blue-300 flex-shrink-0" />
                 <a href="mailto:info@uniapply.com" className="text-blue-200 hover:text-white transition-colors">
                   info@uniapply.com
                 </a>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 mr-3 text-blue-300" />
+                <Phone className="h-5 w-5 mr-3 text-blue-300 flex-shrink-0" />
                 <a href="tel:+11234567890" className="text-blue-200 hover:text-white transition-colors">
                   +1 (123) 456-7890
                 </a>
@@ -86,13 +86,13 @@ const Footer = () => {
             <p className="text-blue-100 mb-4">
               Stay updated with the latest programs and application deadlines.
             </p>
-            <div className="flex space-x-2">
+            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-2">
               <input 
                 type="email"
                 placeholder="Your email" 
-                className="bg-blue-800/50 border border-blue-700 text-white placeholder:text-blue-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="bg-blue-800/50 border border-blue-700 text-white placeholder:text-blue-300 px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
               />
-              <button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md">
+              <button className="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md transition-colors whitespace-nowrap">
                 Subscribe
               </button>
             </div>
@@ -105,7 +105,7 @@ const Footer = () => {
           <p className="text-blue-300 text-sm mb-4 md:mb-0">
             &copy; 2023 UniApply. All rights reserved.
           </p>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             <a href="#" className="text-blue-300 hover:text-white text-sm">Terms of Service</a>
             <a href="#" className="text-blue-300 hover:text-white text-sm">Privacy Policy</a>
             <a href="#" className="text-blue-300 hover:text-white text-sm">Cookie Policy</a>

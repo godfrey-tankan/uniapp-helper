@@ -24,7 +24,7 @@ const NewsCard = ({
           <Calendar className="h-4 w-4 mr-2" />
           <span>{date}</span>
         </div>
-        <a href="#" className="flex items-center text-blue-600 hover:text-blue-800">
+        <a href="#" className="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
           Read More <ChevronRight className="h-4 w-4 ml-1" />
         </a>
       </div>
@@ -106,8 +106,8 @@ const News = () => {
   ];
 
   return (
-    <section id="news" className="py-20 bg-white">
-      <div className="container px-4 mx-auto">
+    <section id="news" className="py-16 md:py-20 bg-white">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           <div className="lg:col-span-2">
             <ScrollReveal>

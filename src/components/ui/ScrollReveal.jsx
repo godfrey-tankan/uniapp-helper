@@ -1,32 +1,32 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { cn } from '@/lib/utils';
 
-const ScrollReveal = ({
-  children,
-  className,
-  delay = 0,
-  direction = 'up',
-  threshold = 0.1,
+const ScrollReveal = ({ 
+  children, 
+  delay = 0, 
+  direction = 'up', 
+  className = '',
+  ...props 
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const currentRef = ref.current;
-    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          if (currentRef) observer.unobserve(currentRef);
+          observer.unobserve(entry.target);
         }
       },
       {
-        threshold,
-        rootMargin: '0px 0px -100px 0px',
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
       }
     );
+
+    const currentRef = ref.current;
 
     if (currentRef) {
       observer.observe(currentRef);
@@ -37,37 +37,48 @@ const ScrollReveal = ({
         observer.unobserve(currentRef);
       }
     };
-  }, [threshold]);
+  }, []);
 
   const getAnimationClass = () => {
     if (!isVisible) return 'opacity-0';
-    if (direction === 'none') return 'animate-fade-in';
-    if (direction === 'up') return 'animate-fade-in';
-    if (direction === 'left') return 'animate-fade-in-left';
-    if (direction === 'right') return 'animate-fade-in-right';
-    return 'animate-fade-in';
+    
+    const baseAnimation = 'transition-all duration-700 ease-out opacity-100';
+    
+    switch (direction) {
+      case 'up':
+        return `${baseAnimation} translate-y-0`;
+      case 'down':
+        return `${baseAnimation} translate-y-0`;
+      case 'left':
+        return `${baseAnimation} translate-x-0`;
+      case 'right':
+        return `${baseAnimation} translate-x-0`;
+      default:
+        return baseAnimation;
+    }
   };
 
-  const getTransformClass = () => {
-    if (isVisible) return '';
-    if (direction === 'none') return '';
-    if (direction === 'up') return 'translate-y-10';
-    if (direction === 'down') return '-translate-y-10';
-    if (direction === 'left') return 'translate-x-10';
-    if (direction === 'right') return '-translate-x-10';
-    return '';
+  const getInitialClass = () => {
+    switch (direction) {
+      case 'up':
+        return 'translate-y-10';
+      case 'down':
+        return 'translate-y-[-10px]';
+      case 'left':
+        return 'translate-x-[-20px]';
+      case 'right':
+        return 'translate-x-20';
+      default:
+        return '';
+    }
   };
 
   return (
     <div
       ref={ref}
-      className={cn(
-        'transition-all duration-700',
-        getAnimationClass(),
-        getTransformClass(),
-        className
-      )}
-      style={{ animationDelay: `${delay}ms` }}
+      className={`${className} ${getInitialClass()} ${getAnimationClass()}`}
+      style={{ transitionDelay: `${delay}ms` }}
+      {...props}
     >
       {children}
     </div>
